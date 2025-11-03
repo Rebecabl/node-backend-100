@@ -1,0 +1,28 @@
+{
+  "name": "todo-list-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+  "dev": "tsx watch src/todo-list-api.ts",
+  "build": "tsc -p tsconfig.json",
+  "start": "node dist/todo-list-api.js"
+},
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^7.2.0",
+    "pino": "^9.14.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
