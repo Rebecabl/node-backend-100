@@ -1,4 +1,3 @@
-
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
@@ -8,30 +7,41 @@ import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { db, TodoRow } from './db.js';
 import path from 'node:path';
-import swaggerUi from 'swagger-ui-express';
 import fs from 'node:fs';
+import swaggerUi from 'swagger-ui-express';
+import { randomUUID } from 'node:crypto';
 
 const usePretty = process.env.USE_PRETTY_LOGS === '1';
 const log = usePretty ? pino({ transport: { target: 'pino-pretty' } }) : pino();
 
-
 type Todo = { id: string; title: string; done: boolean };
-const CreateTodo = z.object({ title: z.string().min(1), done: z.boolean().optional() });
-const UpdateTodo = z.object({ title: z.string().min(1).optional(), done: z.boolean().optional() });
 
+const CreateTodo = z.object({
+  title: z.string().min(1),
+  done: z.boolean().optional(),
+});
+
+const UpdateTodo = z.object({
+  title: z.string().min(1).optional(),
+  done: z.boolean().optional(),
+});
 
 const app = express();
 app.use(helmet());
 app.use(express.json());
 
 
+const parsedOrigins = (process.env.CORS_ORIGIN ?? '')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN ?? true,
+    origin: parsedOrigins.length ? parsedOrigins : true,
     credentials: false,
   })
 );
-
 
 app.use(
   rateLimit({
@@ -42,7 +52,6 @@ app.use(
   })
 );
 
-
 app.use(express.static('public'));
 
 
@@ -51,7 +60,6 @@ if (fs.existsSync(openapiPath)) {
   const openapi = JSON.parse(fs.readFileSync(openapiPath, 'utf8'));
   app.use('/docs', swaggerUi.serve, swaggerUi.setup(openapi));
 }
-
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
@@ -65,8 +73,13 @@ app.post('/todos', (req, res) => {
   const parsed = CreateTodo.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: 'invalid_body', issues: parsed.error.issues });
 
-  const id = crypto.randomUUID();
-  db.prepare('INSERT INTO todos (id, title, done) VALUES (?, ?, ?)').run(id, parsed.data.title, parsed.data.done ? 1 : 0);
+  const id = randomUUID();
+  db.prepare('INSERT INTO todos (id, title, done) VALUES (?, ?, ?)').run(
+    id,
+    parsed.data.title,
+    parsed.data.done ? 1 : 0
+  );
+
   const row = db.prepare('SELECT id, title, done FROM todos WHERE id = ?').get(id) as TodoRow;
   res.status(201).json({ id: row.id, title: row.title, done: !!row.done } as Todo);
 });
@@ -76,8 +89,8 @@ app.patch('/todos/:id', (req, res) => {
   const parsed = UpdateTodo.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: 'invalid_body', issues: parsed.error.issues });
 
-  const row = db.prepare('SELECT id FROM todos WHERE id = ?').get(id) as { id: string } | undefined;
-  if (!row) return res.status(404).json({ error: 'not_found' });
+  const exists = db.prepare('SELECT id FROM todos WHERE id = ?').get(id) as { id: string } | undefined;
+  if (!exists) return res.status(404).json({ error: 'not_found' });
 
   if (parsed.data.title !== undefined) {
     db.prepare('UPDATE todos SET title = ? WHERE id = ?').run(parsed.data.title, id);
@@ -85,6 +98,7 @@ app.patch('/todos/:id', (req, res) => {
   if (parsed.data.done !== undefined) {
     db.prepare('UPDATE todos SET done = ? WHERE id = ?').run(parsed.data.done ? 1 : 0, id);
   }
+
   const updated = db.prepare('SELECT id, title, done FROM todos WHERE id = ?').get(id) as TodoRow;
   res.json({ id: updated.id, title: updated.title, done: !!updated.done } as Todo);
 });
@@ -96,10 +110,12 @@ app.delete('/todos/:id', (req, res) => {
   res.status(204).send();
 });
 
+
 app.use((_req, res) => res.status(404).json({ error: 'not_found' }));
 
 const PORT = Number(process.env.PORT || 3000);
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => log.info({ PORT }, 'todo_list_api_started'));
 }
+
 export default app;

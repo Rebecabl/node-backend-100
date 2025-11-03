@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-  "dev": "tsx watch src/todo-list-api.ts",
-  "build": "tsc -p tsconfig.json",
-  "start": "node dist/todo-list-api.js"
-},
+    "dev": "tsx watch src/todo-list-api.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/todo-list-api.js"
+  },
   "dependencies": {
     "better-sqlite3": "^12.4.1",
     "cors": "^2.8.5",
