@@ -1,5 +1,12 @@
-<<<<<<< HEAD
-# node-backend-100
-=======
-﻿Node Backend 100 — Rebeca
->>>>>>> 1ca63f7 (feat: add 01-todo-list-api (Express + TS))
+# Node Backend 100 — Rebeca
+
+Coleção de **mini APIs em Node.js + TypeScript** (Express/Fastify etc.).  
+Objetivo: **100 projetos**
+
+> Cada backend tem um **frontend correspondente** no repositório:
+> **Web Frontends:** https://github.com/Rebecabl/web-frontend-100
+
+---
+
+## 📦 Estrutura
+
