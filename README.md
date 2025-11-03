@@ -1,4 +1,4 @@
-# Node Backend 100 — Rebeca
+# Node | Backend | 100 Projects 
 
 Coleção de **mini APIs em Node.js + TypeScript** (Express/Fastify etc.).  
 Objetivo: **100 projetos**
