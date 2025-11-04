@@ -1,7 +1,9 @@
-﻿# Node/TS
 node_modules/
-**/node_modules/
 dist/
-**/dist/
 .env
-**/*.env
+.env.*
+**/data/*.db
+*.db
+*.sqlite
+npm-debug.log*
+yarn-error.log
