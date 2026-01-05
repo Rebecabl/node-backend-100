@@ -10,7 +10,7 @@ Criar um endpoint `/health` que retorna o status da aplicação.
 - TypeScript
 - Express
 
-## ▶️ Como executar
+##  Como executar
 ```bash
 cd 01-health-check-service
 npm install
