@@ -26,16 +26,17 @@ Os projetos abordam conceitos como:
 
 ## Lista de Projetos
 
-| #   | Projeto                         | Descrição                                                                 | Stack              |
-|-----|----------------------------------|---------------------------------------------------------------------------|--------------------|
-| 01  | Health Check Service             | Serviço simples para verificar se a aplicação está ativa (`/health`)      | Node.js + Express  |
-| 02  | In-Memory Items Service          | Serviço que retorna uma lista de produtos armazenados em memória          | Node.js + Express  |
-| 03  | Create Product Service                  |   API para cadastro de produtos via requisição POST, com validação básica                                                                        | Node.js + Express
-04	(em breve)		
-05	(em breve)		
-...	...		
-100	(em breve)		                   |                |                                                                           |                    |
+| #   | Projeto                   | Descrição                                                                 | Stack              |
+|-----|----------------------------|---------------------------------------------------------------------------|--------------------|
+| 01  | Health Check Service       | Serviço simples para verificar se a aplicação está ativa (`/health`)      | Node.js + Express  |
+| 02  | In-Memory Items Service    | Serviço que retorna uma lista de produtos armazenados em memória          | Node.js + Express  |
+| 03  | Create Product Service     | API para cadastro de produtos via requisição POST, com validação básica  | Node.js + Express  |
+| 04  | Delete Product Service     | API para remoção de produtos via requisição DELETE, com validação de ID  | Node.js + Express  |
+| 05  | *(em breve)*               |                                                                           |                    |
+| ... | ...                        |                                                                           |                    |
+| 100 | *(em breve)*               |                                                                           |                    |
 
 > A tabela será atualizada conforme novos projetos forem adicionados ao repositório.
+
 
 ---
