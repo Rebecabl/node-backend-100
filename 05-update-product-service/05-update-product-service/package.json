@@ -1,0 +1,14 @@
+{
+  "name": "05-update-product-service",
+  "version": "1.0.0",
+  "description": "API simples para atualizar produtos em memória",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
