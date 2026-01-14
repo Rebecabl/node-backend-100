@@ -2,13 +2,13 @@
 
 API simples em Node.js para **atualizar produtos em memória** usando Express.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 - Atualizar produto por ID
 - Validação básica de dados
 - Retorno de erros apropriados
 - Health check
 
-## 📌 Endpoint
+##  Endpoint
 
 ### Atualizar produto
 PUT `/products/:id`
