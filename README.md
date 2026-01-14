@@ -15,12 +15,12 @@ projetos simples até soluções um pouco mais completas, simulando cenários re
 dia a dia de um desenvolvedor.
 
 Os projetos abordam conceitos como:
-- Criação de APIs e serviços backend
-- Estruturação de projetos
-- Manipulação de dados
-- Regras de negócio
-- Boas práticas de código
-- Organização e versionamento com Git
+- Criação de APIs e serviços backend  
+- Estruturação de projetos  
+- Manipulação de dados  
+- Regras de negócio  
+- Boas práticas de código  
+- Organização e versionamento com Git  
 
 ---
 
@@ -32,11 +32,9 @@ Os projetos abordam conceitos como:
 | 02  | In-Memory Items Service    | Serviço que retorna uma lista de produtos armazenados em memória          | Node.js + Express  |
 | 03  | Create Product Service     | API para cadastro de produtos via requisição POST, com validação básica  | Node.js + Express  |
 | 04  | Delete Product Service     | API para remoção de produtos via requisição DELETE, com validação de ID  | Node.js + Express  |
-| 05  | *(em breve)*               |                                                                           |                    |
+| 05  | Update Product Service     | API para atualização de produtos via requisição PUT, usando ID           | Node.js + Express  |
+| 06  | *(em breve)*               |                                                                           |                    |
 | ... | ...                        |                                                                           |                    |
 | 100 | *(em breve)*               |                                                                           |                    |
 
 > A tabela será atualizada conforme novos projetos forem adicionados ao repositório.
-
-
----
