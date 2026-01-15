@@ -1,0 +1,14 @@
+{
+  "name": "10-environment-config-loader",
+  "version": "1.0.0",
+  "description": "Carregamento de variáveis de ambiente no Node.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "dotenv": "^16.4.5"
+  }
+}

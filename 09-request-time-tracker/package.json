@@ -1,0 +1,13 @@
+{
+  "name": "09-request-time-tracker",
+  "version": "1.0.0",
+  "description": "Middleware para medir o tempo de resposta das requisições",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "08-simple-logger-middleware",
+  "version": "1.0.0",
+  "description": "Middleware simples de log para requisições HTTP",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

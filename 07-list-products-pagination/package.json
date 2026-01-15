@@ -1,0 +1,17 @@
+{
+  "name": "07-list-products-pagination",
+  "version": "1.0.0",
+  "description": "API para listagem de produtos com paginação",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
