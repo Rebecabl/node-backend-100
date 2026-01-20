@@ -1,0 +1,11 @@
+{
+  "name": "16-repository-pattern-in-memory",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
