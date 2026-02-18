@@ -1,0 +1,14 @@
+{
+  "name": "25-auth-middleware",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
