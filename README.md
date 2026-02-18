@@ -38,16 +38,21 @@ Os projetos abordam conceitos como:
 | 08  | List Products with Pagination      | API para listagem de produtos com paginação                               | Node.js + Express  |
 | 09  | Simple Logger Middleware           | Middleware para log de requisições HTTP                                   | Node.js + Express  |
 | 10  | Request Time Tracker               | Middleware que mede o tempo de resposta das requisições                   | Node.js + Express  |
-| 11  | Input Validation Service           | Serviço para validação de dados de entrada                                 | Node.js + Express  |
+| 11  | Input Validation Service           | Serviço para validação de dados de entrada                                | Node.js + Express  |
 | 12  | Error Handling Middleware          | Middleware global para tratamento de erros                                | Node.js + Express  |
 | 13  | Custom HTTP Errors Service         | Serviço para padronização de erros HTTP                                   | Node.js + Express  |
-| 14  | DTO Mapping Service                | Serviço para mapeamento e transformação de dados (DTO)                   | Node.js + Express  |
+| 14  | DTO Mapping Service                | Serviço para mapeamento e transformação de dados (DTO)                    | Node.js + Express  |
 | 15  | Service Layer Pattern              | Implementação do padrão Service Layer                                     | Node.js + Express  |
 | 16  | Repository Pattern (In Memory)     | Implementação do padrão Repository com dados em memória                   | Node.js + Express  |
-| 17  | UUID Generator Service             | Serviço para geração de identificadores únicos (UUID)                    | Node.js + Express  |
+| 17  | UUID Generator Service             | Serviço para geração de identificadores únicos (UUID)                     | Node.js + Express  |
 | 18  | Date Formatting Service            | Serviço utilitário para formatação de datas                               | Node.js + Express  |
 | 19  | Request Body Sanitizer             | Serviço para sanitização de dados recebidos no body                       | Node.js + Express  |
-| 20  | *(em breve)*                       |                                                                           |                    |
+| 20  | API Base Template                  | Estrutura base reutilizável para criação de APIs                          | Node.js + Express  |
+| 21  | User Registration Service          | API para cadastro de usuários                                             | Node.js + Express  |
+| 22  | User Login Service                 | API de autenticação de usuários                                           | Node.js + Express  |
+| 23  | Password Hash Service              | Serviço de hash e verificação de senha                                    | Node.js + Express  |
+| 24  | Auth Token Generator               | Serviço para geração de tokens de autenticação                            | Node.js + Express  |
+| 25  | Auth Middleware                    | Middleware de proteção de rotas autenticadas                              | Node.js + Express  |
 | ... | ...                                |                                                                           |                    |
 | 100 | *(em breve)*                       |                                                                           |                    |
 
